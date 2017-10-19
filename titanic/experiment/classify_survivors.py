@@ -74,7 +74,7 @@ def preprocess(df, columns, target):
     df["Age"] = df["Age"].fillna(averageAge)
     # print range of vals in every col
     for col in df:
-        print("{0} has unique vals: {1}".format(col ,df[col].unique()))
+        print("{0} has {1} unique values".format(col ,len(df[col].unique())))
     dfnew = df.dropna() # lose all rows with missing values
     print("Dropping {0} rows due to missing values".format(len(df) - len(dfnew)))
     df = dfnew
@@ -83,7 +83,7 @@ def preprocess(df, columns, target):
 
 
 X, y = preprocess(training_data, columns, target)
-print("Using Features: {0}".format(X.columns))
+print("Using {0} Features".format(len(X.columns)))
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
@@ -114,4 +114,4 @@ for name, clf in zip(names, classifiers):
 
 
 best = max(results, key=results.get)
-print(best, results[best])
+print("{0} has R2 score of {1:.2f}".format(best, results[best]))
