@@ -49,8 +49,7 @@ PassengerId,Survived
 
  # Output
 ```
-C:\...\kaggle\titanic (master)
-> python experiment\classify_survivors.py
+C:\...\kaggle\titanic (master)> python experiment\classify_survivors.py
 
 Survived has 2 unique values
 Pclass has 3 unique values
