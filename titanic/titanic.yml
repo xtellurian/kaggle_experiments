@@ -1,0 +1,6 @@
+name: titanic
+channels:
+- https://conda.binstar.org/menpo
+- defaults
+prefix: C:\Anaconda\envs\titanic
+

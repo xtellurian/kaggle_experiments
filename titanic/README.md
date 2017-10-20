@@ -22,6 +22,9 @@ Classifier scripts (compares various classifiers) is contained in experiment/cla
 3) Install above dependencies
 4) From the `titanic` directory, run the script from terminal:  `python /experiment/classify_survivors.py`
 
+## Conda Environment
+
+Instead of following the steps above, you can use the provided conda environment in `titanic.yml` 
 
 # Goal
 
