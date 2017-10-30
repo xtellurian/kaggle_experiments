@@ -1,6 +1,7 @@
 """ """
 
 import logging
+import time
 import sys
 import utils
 from models import experiment_dict
@@ -31,6 +32,7 @@ print('X_train has shape {}'.format(X_train.shape))
 print('y_train has shape {}'.format(y_train.shape))
 
 def run_experiment(num):
+    start = time.time()
     logr.info('Running Experiment num={}'.format(num))
     target_model_name = 'expt_{}'.format(num)
 
@@ -44,6 +46,9 @@ def run_experiment(num):
                                                     accuracy_score(y_test,predictions)*100,
                                                     cv,
                                                     pipeline)) 
+
+    taken = time.time() - start
+    logr.info('expt {} took {} seconds'.format(num, taken ))
 
 for i in range(1, len(experiment_dict) + 1):
     run_experiment(i) 
